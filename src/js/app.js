@@ -40,8 +40,8 @@ var ConstObj = require('./constants/constants.js');
          * Method to generate DOM for sort
          */
         "generateSort": function(){
-            $('.sort-wrap').html('<select class="cursor-pointer">'+
-                '<option>Sort by ID</option>'+
+            $('.sort-wrap').html('<p class="sort-lbl" >Sort By Id</p>'+
+            '<select class="cursor-pointer margin-top-10">'+
                 '<option value="asc">Ascending</option>'+
                 '<option value="desc">Descending</option>'+
             '</select>'
@@ -103,6 +103,13 @@ var ConstObj = require('./constants/constants.js');
             var str = '';
             if(list && list.length){
                 list.map(function(val){
+                    console.log(val);
+                    if(val === 'Alien'){
+                        val = 'Other species';
+                    }
+                    if(val === 'earth'){
+                        val = 'Post-Apocalyptic Earth';
+                    }
                     str += process.tagGenerator(val)
                 });
                 $('.selected-tags').append(str);
@@ -152,7 +159,7 @@ var ConstObj = require('./constants/constants.js');
             if(!obj){
                 return '';
             }
-            return  '<div class="col col-xs-6 col-sm-6 col-md-4 col-lg-3">'+
+            return  '<div class="col col-xs-6 col-sm-6 col-md-3 col-lg-3">'+
                             '<div class="list-item">'+
                                 '<figure class="character-fig">'+
                                     '<img src='+obj.image+' alt='+obj.name+' >'+
@@ -317,6 +324,12 @@ var ConstObj = require('./constants/constants.js');
                          selectedValue = e.target.closest('.tag').textContent ? e.target.closest('.tag').textContent.slice(0,-1) : null;
                      }
                      if(selectedValue){
+                         if(selectedValue === 'Other species'){
+                            selectedValue = 'Alien';
+                         }
+                         if(selectedValue === 'Post-Apocalyptic Earth'){
+                            selectedValue = 'earth'
+                         }
                         process.removeFilter(selectedValue)
                      }
                  });
