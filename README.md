@@ -1,6 +1,6 @@
 Steps to run this project
 
-1) "npm install"  to run the all node packages
+1) "npm install"  to download the all node packages
 1) Install json-server globally --( "npm install json-server -g")
 2) On successful installation run following commands
 
