@@ -321,7 +321,7 @@ var ConstObj = require('./constants/constants.js');
                  var selectedValue = null;
                  $(document).on('click','.selected-tags',function(e){
                      if(e.target && $(e.target).hasClass('remove-tag')){
-                         selectedValue = e.target.closest('.tag').textContent ? e.target.closest('.tag').textContent.slice(0,-1) : null;
+                         selectedValue = $(e.target).parents('.tag').text() ? $(e.target).parents('.tag').text().slice(0,-1) : null;
                      }
                      if(selectedValue){
                          if(selectedValue === 'Other species'){
@@ -334,7 +334,6 @@ var ConstObj = require('./constants/constants.js');
                      }
                  });
              }
-             
      
              var sortSelector =  $('.sort-wrap select');
      
@@ -348,7 +347,6 @@ var ConstObj = require('./constants/constants.js');
                  process.charactersList(listReq);
              })
         },
-
         /**
          * Method to create querystring for api on filter applied
          * @param {array} typeData 
