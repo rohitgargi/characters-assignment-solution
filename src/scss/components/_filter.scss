@@ -1,0 +1,31 @@
+.filter-container{
+    .list-filter{
+      display: none;
+      @include font-size(77%);
+    }
+    .filter-heading{
+      font-weight: bold;
+      font-size: 84%;
+    }
+    .glyphicon-minus-sign{
+      display: none;
+    }
+    .filter-checkbox{
+      border:1px solid $gs-6;
+      padding: 10px;
+    }
+    @include medium-screen{
+      .list-filter{
+        display: block !important;
+      }
+      .filter-checkbox{
+        display: inline-block;
+      }
+      .glyphicon-minus-sign,.glyphicon-plus-sign{
+        display: none !important;
+      }
+    }
+    input[type=checkbox]{
+      cursor: pointer;
+    }
+}

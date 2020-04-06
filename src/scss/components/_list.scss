@@ -1,0 +1,133 @@
+.selected-tags{
+    .tag{
+      display: inline-block;
+      @include bg-opacity($gs-8);
+      @include margin(0,5px,0,0);
+      padding: 7px 15px;
+      border-radius: 5px;
+      color: $gs-23;
+      @include font-size(77%);
+      min-width: 62px;
+      .remove-tag{
+        cursor: pointer;
+      }
+    }
+}
+.search-wrap {
+    text-align: left;
+    @include margin(0,0,5px,0);
+    .search-lbl{
+      @include font-size(78%);
+    }
+    input{
+      width: 100%;
+      height: 25px;
+    }
+    .search-btn{
+      height: 25px;
+      @include font-size(94%)
+    }
+    @include small-screen{
+      margin-bottom: 0;
+      input{
+        width: 70%;
+      }
+      .search-btn{
+        margin-top: 10px;
+      }
+    }
+    @include medium-screen{
+      .search-btn{
+        display:inline-block;
+      }
+    }
+}
+
+.sort-wrap{
+  @include margin(0,0,5px,0);
+  select{
+    width: 100%;
+    height: 25px;
+    @include font-size(77%);
+  }
+  @include small-screen{
+    margin-bottom: 0;
+    select{
+      width: 80%;
+      position: relative;
+      top: 26px;
+    }
+  }
+}
+.list-container {
+    min-height: 450px;
+    padding: 0 0 5px 5px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $gs-1;
+    .list-item {
+        flex: 40%;
+        @include bg-opacity($gs-3);
+        border-radius: 5px;
+        position: relative;
+        box-sizing: border-box;
+        @include margin(10px,5px,10px,5px);
+        .character-fig{
+          position: relative;
+          height: 250px;
+          display:block;
+          img{
+            height: 100%;
+            width: 100%;
+            border-radius: 5px 5px 0px 0px;
+          }
+          .box-top-area {
+            position: absolute;
+            padding: 10px 7px;
+            @include bg-opacity($gs-1);
+            opacity: 0.8;
+            width: 100%;
+            box-sizing: border-box;
+            bottom: 0;
+            text-align: left;
+            .char-name {
+                @include font-size(100%);
+                display: block;
+                color: $gs-20;
+            }
+            .char-id {
+                @include font-size(66%);
+                color: $gs-9;
+            }
+          }
+        }
+        ul {
+            list-style-type: none;
+            @include margin(5px,5px,5px,5px);
+            padding: 0 0 20px 0;
+            li {
+                padding:  10px 5px;
+                border-bottom: 1px solid $gs-6;
+                color: $gs-10;
+                @include font-size(61%);
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                .property-area {
+                    text-transform: uppercase;
+                }
+                .value-area {
+                    color: #ffa500;
+                }
+            }
+            li:last-child {
+                border: none;
+            }
+        }
+    }
+}
