@@ -24,7 +24,7 @@
     "@babel/runtime": "^7.9.2",
     "autoprefixer": "^9.7.5",
     "http-server": "^0.12.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
